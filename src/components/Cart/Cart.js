@@ -26,7 +26,7 @@ const Cart = (props) => {
     const grandTotal = formatPrecision(total+shipping+Number(tax));
     return (
         <div>
-            <h4>Order Summary</h4>
+            <h4 >Order Summary</h4>
             <p>Items Ordered : {cart.length}</p>
             <p>Product Price : {formatPrecision(total)}</p>
             <p>Tax / VAT : {tax}</p>
