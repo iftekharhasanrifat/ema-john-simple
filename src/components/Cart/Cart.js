@@ -6,24 +6,24 @@ const Cart = (props) => {
     let total = 0;
     for (let i = 0; i < cart.length; i++) {
         const product = cart[i];
-        total += product.price;
+        total += product.price * product.quantity;
     }
     let shipping = 0;
-    if(total>35){
-        shipping=0;
+    if (total > 35) {
+        shipping = 0;
     }
-    else if(total>15){
-        shipping=4.99;
+    else if (total > 15) {
+        shipping = 4.99;
     }
-    else if(total>0){
+    else if (total > 0) {
         shipping = 12.99;
     }
-    const tax = (total/10).toFixed(2);
-    const formatPrecision =num =>{
+    const tax = (total / 10).toFixed(2);
+    const formatPrecision = num => {
         const precision = num.toFixed(2);
         return Number(precision);
     }
-    const grandTotal = formatPrecision(total+shipping+Number(tax));
+    const grandTotal = formatPrecision(total + shipping + Number(tax));
     return (
         <div>
             <h4 >Order Summary</h4>
@@ -32,6 +32,9 @@ const Cart = (props) => {
             <p>Tax / VAT : {tax}</p>
             <p><small>Shipping Cost : {shipping}</small></p>
             <p>Total Price : {grandTotal}</p>
+            {
+                props.children
+            }
         </div>
     );
 };
