@@ -65,7 +65,7 @@ function Login() {
     const handleSubmit = (e) => {
         // console.log(user.email, user.password)
         if (newUser && user.email && user.password) {
-            createUserWithEmailAndPassWord(user.displayName,user.email,user.password)
+            createUserWithEmailAndPassWord(user.name,user.email,user.password)
                 .then(res => {
                     handleResponse(res,true);
                 })
