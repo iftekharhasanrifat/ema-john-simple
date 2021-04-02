@@ -26,7 +26,7 @@ const Review = () => {
         const savedCart = getDatabaseCart();
         const productkeys= Object.keys(savedCart);
         
-        fetch('http://localhost:5000/productsByKeys',{
+        fetch('https://glacial-taiga-23149.herokuapp.com/productsByKeys',{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json'
